@@ -1,1 +1,1 @@
-# BSU-shedule-console
+# BSU Shedule Console
