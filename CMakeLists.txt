@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(fmt CONFIG REQUIRED)
 find_package(CURL CONFIG REQUIRED)
 find_package(xlsxio CONFIG REQUIRED)
+find_package(CLI11 CONFIG REQUIRED)
 
 add_executable(BSU-schedule main.cpp)
 
@@ -14,4 +15,5 @@ target_link_libraries(BSU-schedule PRIVATE
         fmt::fmt
         CURL::libcurl
         xlsxio::xlsxio_read_SHARED xlsxio::xlsxio_write_SHARED
+        CLI11::CLI11
 )
