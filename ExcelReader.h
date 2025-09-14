@@ -12,6 +12,18 @@ class ExcelReader {
     std::unordered_map<const char*, std::pair<int,int>> cellMap {};
     xlsxioreader table;
 
+    std::vector<const char*> findSheets() {
+        xlsxioreadersheetlist sheetlist = xlsxioread_sheetlist_open(table);
+        const char* sheetname;
+        std::vector<const char*> sheets;
+
+        while((sheetname = xlsxioread_sheetlist_next(sheetlist)) != nullptr) {
+            sheets.emplace_back(sheetname);
+        }
+        xlsxioread_sheetlist_close(sheetlist);
+        return sheets;
+    }
+
 public:
 
     explicit ExcelReader(const char* path) : tablePath(path) {
