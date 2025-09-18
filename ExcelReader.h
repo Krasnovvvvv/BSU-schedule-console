@@ -51,7 +51,7 @@ public:
         if(!table) {
             throw std::runtime_error("Invalid table path!");
         }
-        findSheets();
+        _sheets = findSheets();
     };
 
     explicit ExcelReader() : ExcelReader("C:/myTables") {};
